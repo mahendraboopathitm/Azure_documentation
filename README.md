@@ -155,7 +155,145 @@ Paying monthly for Azure services based on consumption instead of buying physica
 
 ---
 
-## Conclusion
+# Azure Compute Services
 
-Azure provides a flexible cloud platform with multiple compute options, service models, and billing approaches — allowing organizations to choose based on cost, control, and business needs.
+Azure Compute Services provide the processing power required to run applications, scripts, websites, and workloads in the cloud.
+
+---
+
+## 3. Azure Compute Services Overview
+
+Azure offers different compute options depending on the level of control, scalability, and purpose.
+
+---
+
+### 3.1 Virtual Machines (VMs)
+
+Azure Virtual Machines allow you to run Windows or Linux systems in the cloud, similar to a physical computer.
+
+#### 3.1.1 VM Sizing, Pricing, and Scaling
+
+- **VM Sizing:** VMs are available in different configurations based on CPU, RAM, and disk type.
+
+| VM Type | Example | Best for |
+|--------|---------|----------|
+| General Purpose | B2s, D2s | Development, Web servers |
+| Compute Optimized | F-series | High CPU workloads |
+| Memory Optimized | E-series | Databases |
+| GPU VMs | NV-series | AI/ML workloads |
+| High Performance | H-series | Scientific workloads |
+
+- **Pricing Model:**
+  - **Pay-As-You-Go:** Pay only when running.
+  - **Reserved Instances:** Cheaper if committed for 1–3 years.
+
+- **Scaling:**
+  - Scale VM size up or down based on demand.
+  - Example: During festive sales, increase size from `D2s → D8s`.
+
+#### 3.1.2 VM Deployment and Management
+
+VMs can be deployed using:
+
+- Azure Portal
+- Azure CLI
+- PowerShell
+- ARM Templates
+- Terraform
+
+You can manage them using **SSH (Linux)** or **RDP (Windows)**.
+
+**Example Use Case:**  
+A payroll server is deployed as a Windows VM and maintained manually.
+
+---
+
+### 3.2 Azure App Services
+
+Azure App Service is a **Platform-as-a-Service (PaaS)** for hosting web applications, REST APIs, and mobile backends without managing underlying infrastructure.
+
+Azure automatically handles:
+
+- OS patching
+- Load balancing
+- Auto-scaling
+- CI/CD support
+- Deployment slots
+
+**Example Use Case:**  
+Deploy a Python Flask API or Node.js web app without worrying about OS.
+
+---
+
+### 3.3 Azure Functions (Serverless)
+
+Azure Functions allow you to run event-driven code without provisioning servers.
+
+You only pay for execution time (milliseconds).
+
+**Triggers examples:**
+
+| Trigger Type | Example |
+|-------------|---------|
+| Blob Trigger | Resize image when uploaded |
+| Timer Trigger | Run daily automated cleanup |
+| HTTP Trigger | Work like API endpoint |
+| Queue Trigger | Process asynchronous tasks |
+
+**Example Use Case:**  
+When a user uploads an image, a function compresses and stores it.
+
+---
+
+### 3.4 Azure Kubernetes Service (AKS)
+
+Azure Kubernetes Service is used for managing containerized applications using **Docker + Kubernetes**.
+
+It provides:
+
+- Auto scaling
+- Load balancing
+- Self-healing containers
+- Blue-green deployments
+
+**Example Use Case:**  
+A banking microservices system (login, payment, alerts) deployed as containers and managed through AKS.
+
+---
+
+### 3.5 Cloud Service Models
+
+Azure offers multiple cloud consumption models.
+
+| Model | Responsibility | Example Services | Analogy |
+|-------|---------------|----------------|---------|
+| **IaaS** | You manage OS + apps | Azure VM | Rent empty house and customize |
+| **PaaS** | Only deploy code | App Service, Azure SQL | Furnished apartment |
+| **SaaS** | Everything managed | Office 365, Gmail | Hotel stay |
+
+---
+
+## When to Use What?
+
+| Requirement | Best Option |
+|------------|-------------|
+| Full control over OS and apps | Virtual Machines |
+| Host a website/API with minimal management | App Service |
+| Event-driven automation or short tasks | Azure Functions |
+| Microservices or container orchestration | AKS |
+| Fully ready-to-use software | SaaS model |
+
+---
+
+## Summary
+
+- **VMs** → Maximum control, manual management.
+- **App Services** → Deploy apps without managing servers.
+- **Azure Functions** → Serverless, event-driven automation.
+- **AKS** → Container orchestration for microservices.
+- **Cloud Models** → Decide level of ownership (IaaS, PaaS, SaaS).
+
+---
+
+
 
